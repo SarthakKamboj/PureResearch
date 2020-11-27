@@ -7,10 +7,11 @@ def sort_evals(evals: list) -> list:
     return evals
 
 
-def create_rand_alloc(num_resources: int = 10, num_agents: int = 10):
+def create_rand_alloc(num_resources: int = 10, num_agents: int = 10, min_val: int = 0, max_val: int = 100):
     alloc = {}
     for i in range(num_resources):
-        alloc[str(i)] = [random.randint(0, 100) for _ in range(num_agents)]
+        alloc[str(i)] = [random.randint(min_val, max_val)
+                         for _ in range(num_agents)]
     return alloc
 
 
